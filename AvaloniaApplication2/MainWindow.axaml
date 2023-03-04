@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication2.MainWindow"
+        Title="AvaloniaApplication2">
+        
+        <Grid>
+                <DataGrid SelectedItem="{Binding SelectedUser}" x:Name="UserDataGrid" Items="{Binding Clients}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                                <DataGridTextColumn Header="Фамилия" Binding="{Binding Path = Surname}"/> 
+                                <DataGridTextColumn Header="Имя" Binding="{Binding Path = Name}"/> 
+                                <DataGridTextColumn Header="Отчество" Binding="{Binding Path = Lastname}"/> 
+                                <DataGridTextColumn Header="Должность" Binding="{Binding Path = role_id}"/> 
+                                <DataGridTextColumn Header="День рождения" Binding="{Binding Path = Birthday}"/> 
+                                <DataGridTextColumn Header="Телефон" Binding="{Binding Path = Telephonenumber}"/> 
+                        </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="Удалить" Name="DeleteUser" Click="DeleteUser_OnClick"> </Button>
+                <Button HorizontalAlignment="Center" Content="Добавить" Name="AddUser" Click="AddUser_OnClick"/>
+        </Grid>
+</Window>
